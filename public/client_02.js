@@ -2,11 +2,14 @@
 
 var socket;
 var rad;
+var video;
 
 function setup(){
-  createCanvas(200,200);
-  background(0);
   rad=0;
+  video = createVideo('videos/countdown_mp4_480.mp4');
+  video.loop();
+  //video.addCue(5.0, resetVideo);
+  //video.onended(resetVideo)
 
   //Question for Dima: do I need to change my IP in each sketch each time I reconnect to wifi???
 
@@ -15,15 +18,15 @@ function setup(){
 }
 
 function newDrawing(data){
-  rad = data;
-  background(0);
-  console.log("newMsg recieved: " + rad);
+  video.time(0);
+  video.play();
+  console.log("video reset");
 
 }
-
+function resetVideo(){
+  video.time(0);
+}
 function draw() {
-  noStroke();
-  fill(255,255,50);
-  ellipse(width/2, height/2, rad, rad)
-  rad++;
+
+
 }
