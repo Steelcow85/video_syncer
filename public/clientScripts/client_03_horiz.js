@@ -5,7 +5,7 @@ var myPlayer = videojs('myVideo');
 
 function setup(){
 
-  //Question for Dima: do I need to change my IP in each sketch each time I reconnect to wifi???
+  //Is there an easy way to update the IP address for all the sketches?
 
   //connect to server @ address
   socket = io.connect('http://10.20.57.20:3000');
