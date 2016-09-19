@@ -8,7 +8,7 @@ function setup(){
   //Is there an easy way to update the IP address for all the sketches?
 
   //connect to server @ address
-  socket = io.connect('http://10.20.57.20:3000');
+  socket = io.connect('http://10.20.223.49:3000');
   //on recieving newMsg from server, run resetVid
   socket.on('newMsg', resetVid);
 }
