@@ -15,6 +15,8 @@ var io = socket(server);
 //on new connection to server run newCOnnection
 io.sockets.on('connection', newConnection);
 
+
+
 function newConnection(socket){
   console.log('new connection');
 
