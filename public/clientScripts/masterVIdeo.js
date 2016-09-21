@@ -4,10 +4,7 @@ var socket;
 var myPlayer = videojs('myVideo');
 var resetReady;
 
-
 function setup(){
-  //Is there an easy way to update the IP address for all the sketches?
-  numLoops=0;
   //connect to server @ address
   socket = io.connect('http://10.20.223.49:3000');
   //on recieving newMsg from server, run resetVid
@@ -18,33 +15,25 @@ function setup(){
 
 //reset video to frame 0 and play in loop
 function resetVid(data){
-
   myPlayer.currentTime(0);
   myPlayer.loop(true);
   myPlayer.play();
   console.log("video reset ");
-
-
 }
 
-
-function resetVideo() {
+//send request to server to reset all videos
+function resetAll() {
   console.log("Video Reset request sent to server");
   var data;
   socket.emit('mouse',data);
-
 }
 
 function draw() {
   if((myPlayer.currentTime() == 0) && (resetReady == true)){
-    resetVideo();
+    resetAll();
     resetReady = false;
-//There will have to be one master video, this calls reset on everyone else
-
   }
-  if(myPlayer.currentTime() > 1){
+  if(myPlayer.currentTime() > 0){
     resetReady = true;
   }
-
-
 }

@@ -1,7 +1,7 @@
 VIDEO SYNC across multiple devices
 
 ********* IMPORTANT *********
-to run properly, client_03_horiz.js (in scripts folder) needs to be updated with your server's current IP address!
+to run properly, clientVIdeos.js and masterVideo.js (in scripts folder) needs to be updated with your server's current IP address!
 
 1. run node server.js on your desktop
 
